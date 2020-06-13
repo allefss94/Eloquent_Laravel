@@ -13,5 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/imoveis/remove/{id}', 'ImoveisController@remover')->name('imoveis.remove');
 
 Route::resource('imoveis','ImoveisController');
+

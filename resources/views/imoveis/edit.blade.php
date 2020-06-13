@@ -18,25 +18,25 @@
 
     <div class="card-body">
 
-        <form action="{{ route ('imoveis.store') }}" method="post">
+        <form action="{{ route ('imoveis.update', $imovel->id) }}" method="post">
+            @method('PUT')
             {!! csrf_field() !!}
-
             <h4>Dados do imóvel</h4>
             <hr>
             <div class="form-group">
                 <label for="descricao">Descrição</label>
-                <input type="text" name="descricao" class="form-control" placeholder="Descrição" required>
+                <input type="text" name="descricao" class="form-control" placeholder="Descrição" required value="{{$imovel->descricao}}">
             </div>
             <div class="row">
                 <div class="col-md-6">
                     <div class="form-group">
                         <label for="preco">Preço</label>
-                        <input type="text" name="preco" id="" class="form-control" required>
+                        <input type="text" name="preco" id="" class="form-control" required value="{{$imovel->preco}}">
                     </div>
                 </div>
                 <div class="col-md-6">
                     <label for="qntQuartos">Quantidade de Quartos</label>
-                    <input type="number" name="qtnQuartos" id="" class="form-control" required>
+                    <input type="number" name="qtnQuartos" id="" class="form-control" required value="{{$imovel->qtnQuartos}}">
                 </div>
             </div>
             <div class="row">
@@ -66,32 +66,32 @@
                 <div class="col-md-4">
                     <div class="form-group">
                         <label for="logradouroEndereco">Logradouro</label>
-                        <input type="text" name="logradouroEndereco" id="" class="form-control" required>
+                        <input type="text" name="logradouroEndereco" id="" class="form-control" required value="{{$imovel->logradouroEndereco}}">
                     </div>
                 </div>
                 <div class="col-md-4">
                     <label for="bairroEndereco">Bairro</label>
-                    <input type="text" name="bairroEndereco" id="" class="form-control" required>
+                    <input type="text" name="bairroEndereco" id="" class="form-control" required value="{{$imovel->bairroEndereco}}">
                 </div>
                 <div class="col-md-4">
                     <label for="numeroEndereco">Numero</label>
-                    <input type="number" name="numeroEndereco" placeholder="Numero" class="form-control" required>
+                    <input type="number" name="numeroEndereco" placeholder="Numero" class="form-control" required value="{{$imovel->numeroEndereco}}">
                 </div>
             </div>
 
             <div class="row">
                 <div class="col-md-6">
                     <label for="cidade">Cidade</label>
-                    <input type="text" name="cidadeEndereco" placeholder="Cidade" class="form-control" required>
+                    <input type="text" name="cidadeEndereco" placeholder="Cidade" class="form-control" required value="{{$imovel->cidadeEndereco}}">
                 </div>
                 <div class="col-md-6">
                     <label for="cepEndereco">Cep</label>
-                    <input type="text" name="cepEndereco" placeholder="Cep" class="form-control" required>
+                    <input type="text" name="cepEndereco" placeholder="Cep" class="form-control" required value="{{$imovel->cepEndereco}}">
                 </div>
             </div>
             <div class="mt-4">
                 <a href="{{ url()->previous() }}" class="btn btn-primary">Voltar</a>
-                <button class="btn btn-primary" type="submit">Cadastrar</button>
+                <button class="btn btn-primary" type="submit">Atualizar</button>
             </div>
         </form>
 

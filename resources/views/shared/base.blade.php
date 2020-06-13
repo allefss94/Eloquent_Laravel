@@ -10,10 +10,14 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
             padding-top: 70px;
             padding-bottom: 50px;
+        }
+        .card{
+            box-shadow: 1px 2px 15px grey;
         }
 
     </style>
@@ -28,16 +32,16 @@
         <div class="collapse navbar-collapse" id="collapseNavbar">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Todos <span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="{{route('imoveis.index')}}">Todos <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Apartamentos</a>
+                <a class="nav-link" href="{{route('imoveis.index', 'tipo=apartamento')}}">Apartamentos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Casas</a>
+                <a class="nav-link" href="{{route('imoveis.index', 'tipo=casa')}}">Casas</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Kitnet</a>
+                    <a class="nav-link" href="{{ route('imoveis.index', 'tipo=kitnet')}}">Kitnet</a>
                 </li>
             </ul>
         </div>
